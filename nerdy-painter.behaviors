@@ -1,0 +1,4 @@
+
+[[:app :lt.objs.plugins/load-js "nerdy-painter_compiled.js"]
+ [:editor.clj :-lt.plugins.clojure/clj-result.inline]
+ [:editor.clj :lt.plugins.nerdy-painter/clj-result.inline]]
