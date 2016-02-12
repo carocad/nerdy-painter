@@ -152,4 +152,4 @@ break;
 lt.object.behavior_STAR_.call(null,new cljs.core.Keyword("lt.plugins.nerdy-painter","clj-result.inline","lt.plugins.nerdy-painter/clj-result.inline",4501491080),new cljs.core.Keyword(null,"reaction","reaction",4441361819),lt.plugins.nerdy_painter.__BEH__clj_result__DOT__inline,new cljs.core.Keyword(null,"triggers","triggers",2516997421),new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"editor.eval.clj.result.inline","editor.eval.clj.result.inline",1424832446),null], null), null));
 }
 
-//# sourceMappingURL=nerdy-painter_compiled.js.map
+//# sourceMappingURL=nerdypainter_compiled.js.map
