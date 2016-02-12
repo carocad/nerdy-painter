@@ -15,7 +15,7 @@ Examples:
 
 bus ; displays the image below
 ```
-![bus](https://raw.githubusercontent.com/carocad/nerdy-painter/master/resources/latex-eq-preso.jpg)
+![bus](https://raw.githubusercontent.com/carocad/nerdy-painter/master/resources/%C3%ADndice.gif)
 
 - Equations created at runtime
 
