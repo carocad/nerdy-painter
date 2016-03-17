@@ -27,6 +27,47 @@ equation ; displays the image below
 
 ![equation](https://raw.githubusercontent.com/carocad/nerdy-painter/master/resources/latex-eq-preso.jpg)
 
+### with Incanter
+If you are using the popular incanter and you want to take advantage of the great dynamicity of Lighttable then this plugin can help you accomplish that.
+
+we need to convert the JFreecharts objects into base64-encoded strings. You will need to have the following dependencies in your project.clj
+
+```Clojure
+[incanter/incanter-charts "1.5.5"] ; to create the chart objects
+[org.clojure/data.codec "0.1.0"] ; to encode the chart objects in base 64
+```
+
+Now you need to create a plotting function. To isolate it from the rest of your code I will put it in a special namespace
+
+```Clojure
+(ns example.magic-plot
+  (:import  [org.jfree.chart ChartUtilities]) ; Incanter dependency, don't worry
+  (:require [clojure.data.codec.base64 :as b64]))
+
+(defn plot
+  [chart & options]
+  (let [opts      (when options (apply assoc {} options))
+        width     (or (:width opts) 400)
+        height    (or (:height opts) 300)
+        ; byte array with binary PNG data
+        image-buf (ChartUtilities/encodeAsPNG (.createBufferedImage chart width height))]
+     (clojure.string/join (map char (b64/encode image-buf)))))
+```
+
+That's it !!
+Now anytime that you create a chart, you don't need to call `view` but `plot`. For example:
+```
+(ns example.core
+  (:require [example.magic-plot :refer [plot]]
+            [incanter.charts :as chart]))
+
+(plot (chart/scatter-plot [1 2 3 4] [1 2 3 4]))
+```
+You should see the following:
+![bus](https://raw.githubusercontent.com/carocad/nerdy-painter/master/resources/screenshot.png)
+
+Enjoy :)
+
 ## License
 
 Copyright © 2015 Camilo Roca
