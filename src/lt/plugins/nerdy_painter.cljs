@@ -36,5 +36,5 @@
                   src (base64? (:result result))]]
       (cond
         (:stack result)  (object/raise obj :editor.eval.clj.exception result :passed)
-        (not (nil? src)) (object/raise obj :editor.result (image src) loc)
+        (not (nil? src)) (object/raise obj :editor.result.underline (image src) loc)
         :default         (object/raise obj :editor.result (:result result) loc)))))
