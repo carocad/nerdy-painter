@@ -1,2 +1,2 @@
-(defproject nerdy-painter "0.0.1"
+(defproject nerdy-painter "0.0.3"
   :dependencies [[org.clojure/clojure "1.5.1"]])
