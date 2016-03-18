@@ -74,3 +74,7 @@ Copyright © 2015 Camilo Roca
 
 Distributed under the LGPL v3.
 
+### Note
+Some strings comply with the base64 format but are not. In some cases nerdy-painter will still recognize them as base64 and try to display them. This is a corner case !. I have not been able to create a full workaround; the current workaround only works for short strings, less than 92 chars, which is the size of a 1x1 white [pixel](http://proger.i-forge.net/%D0%9A%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80/[20121112]%20The%20smallest%20transparent%20pixel.html).
+If you know a better way, by all means let me know.
+

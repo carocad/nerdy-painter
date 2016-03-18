@@ -14,7 +14,8 @@
   [result]
   (when-let [inner-text (wrapped-string? result)]
     (when (and (= 0 (mod (count inner-text) 4))
-               (re-find #"^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{4}|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)$" inner-text))
+               (>= (count inner-text) 92); corner case: some strings comply with the base64 format but are not, such as "00070002"
+               (re-find #"^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$" inner-text))
       inner-text)))
 
 ; create an img HTML tag with a base64 content
