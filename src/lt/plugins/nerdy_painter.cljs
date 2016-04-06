@@ -20,7 +20,10 @@
 
 ; create an img HTML tag with a base64 content
 (defui image [src]
-  [:img {:src (str "data:image/png;base64," src)}])
+  (if (= (first (seq src)) \P);SVG-MIME type -> possibly animated image, treat differently
+    [:img {:src (str "data:image/svg+xml;base64," src)}]
+    [:img {:src (str "data:image/png;base64," src)}]))
+;NOTE: the svg mime type idea was taken from: https://gist.github.com/nazoking/2822127
 
 ; modify the behavior of the clojure editor to first check if the
 ; passed result is a base64 encoded image\; if so then show it
