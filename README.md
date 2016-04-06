@@ -5,7 +5,7 @@ nerdy-painter modifies your Clojure's eval behavior to allow images in base64 fo
 
 ##usage
 This plugin is mainly meant to be used as a middleware between Lighttable and a plotting/charting/image library.
-If you want to display any kind of static images in Lighttable, simply create it, encode it as a base64 string and return it; the encoding will be automatically recognized and wrapped in an HTML img tag.
+If you want to display an images in Lighttable, simply create it, encode it as a base64 string and return it; the encoding will be automatically recognized and wrapped in an HTML img tag.
 
 Examples:
 - Images created at runtime
