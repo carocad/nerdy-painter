@@ -60,16 +60,17 @@ Now you need to create a plotting function. To isolate it from the rest of your 
   (:require [clojure.data.codec.base64 :as b64]))
 
 (defn plot
-  [chart & options]
-  (let [opts      (when options (apply assoc {} options))
-        width     (or (:width opts) 400)
-        height    (or (:height opts) 300)
-        ; byte array with binary PNG data
-        image-buf (ChartUtilities/encodeAsPNG (.createBufferedImage chart width height))]
-     (clojure.string/join (map char (b64/encode image-buf)))))
+   [^JFreeChart chart & options]
+   (let [opts      (when options (apply assoc {} options))
+         width     (or (:width opts) 400)
+         height    (or (:height opts) 300)
+         ; byte array with binary PNG data
+         image-buf (ChartUtilities/encodeAsPNG (.createBufferedImage chart width height))]
+      (clojure.string/join (map char (b64/encode image-buf)))))
 ```
 
 That's it !!
+
 Now anytime that you create a chart, you don't need to call `view` but `plot`. For example:
 ```
 (ns example.core
