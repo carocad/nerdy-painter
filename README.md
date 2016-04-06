@@ -40,7 +40,7 @@ bus ; displays the image below
 
 ;; displays the image below
 ```
-![equation](https://raw.githubusercontent.com/carocad/nerdy-painter/master/resources/sprout-chart.svg)
+![sprouts](https://sarasoueidan.com/images/svg-vs-gif--sprout-chart.svg)
 
 ### with Incanter
 If you are using the popular incanter and you want to take advantage of the great dynamicity of Lighttable then this plugin can help you accomplish that.
@@ -79,7 +79,7 @@ Now anytime that you create a chart, you don't need to call `view` but `plot`. F
 (plot (chart/scatter-plot [1 2 3 4] [1 2 3 4]))
 ```
 You should see the following:
-![bus](https://raw.githubusercontent.com/carocad/nerdy-painter/master/resources/screenshot.png)
+![screenshot](https://raw.githubusercontent.com/carocad/nerdy-painter/master/resources/screenshot.png)
 
 Enjoy :)
 
